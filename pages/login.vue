@@ -4,13 +4,13 @@
 			class="
 				w-full
 				max-w-xs
-				bg-white
+				bg-gray-300
 				my-auto
 				flex flex-col
 				py-5
 				px-8
 				rounded-lg
-				shadow-lg
+				shadow-lg 
 			"
 			@submit.prevent=""
 		>
@@ -31,7 +31,7 @@
 				<nuxt-link to=""> Reset </nuxt-link>
 			</div>
 			<div class="input-field">
-				<button>Sign In</button>
+				<Button>Sign In</Button>
 				<nuxt-link to="/signup">Create Account</nuxt-link>
 			</div>
 		</form>

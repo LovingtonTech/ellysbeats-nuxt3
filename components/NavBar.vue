@@ -49,18 +49,14 @@ export default {
 </script>
 
 <style scoped>
-.navlinks {
-	@apply sm:flex sm:flex-row hidden sm:px-4 sm:justify-between;
-}
+
 .navlinks a {
 	@apply p-3 hover:bg-blue-400 hover:text-white;
 }
 a.nuxt-link-exact-active {
 	@apply bg-blue-400 text-white;
 }
-.navtoggle {
-	@apply sm:hidden  px-3 py-2;
-}
+
 .dropdownNav {
 	@apply flex flex-col h-full left-0 top-0 fixed;
 	@apply bg-blue-300 text-center;
