@@ -1,7 +1,11 @@
 <template>
 	<div class="navbar flex justify-between p-3 items-center bg-blue-300">
+			<div @click="toggleDropdown" class="navtoggle sm:hidden">
+				<i class="pi pi-bars h-6 w-6" v-if="!dropdown"> </i>
+				<fa icon="times" v-if="dropdown" class="h-6 w-6" />
+			</div>
 		<div class="text-xl">TopGladz</div>
-		<nav class="navlinks" :class="{ dropdownNav: dropdown }">
+		<nav class="navlinks hidden sm:block" :class="{ dropdownNav: dropdown }">
 			<nuxt-link to="./">Home</nuxt-link>
 			<nuxt-link to="./products">Buy Products</nuxt-link>
 			<nuxt-link to="./contacts">Contact us</nuxt-link>
@@ -10,11 +14,7 @@
 		<div class="flex space-x-3 text-lg">
 			<div class="shadow rounded-lg px-4 py-2 bg-red-400 text-white text-bold">
 				<fa icon="cart-plus" />
-				<p>0 items</p>
-			</div>
-			<div @click="toggleDropdown" class="navtoggle">
-				<fa icon="bars" v-if="!dropdown" class="h-6 w-6" />
-				<fa icon="times" v-if="dropdown" class="h-6 w-6" />
+				0 items
 			</div>
 		</div>
 	</div>
@@ -49,7 +49,6 @@ export default {
 </script>
 
 <style scoped>
-
 .navlinks a {
 	@apply p-3 hover:bg-blue-400 hover:text-white;
 }
@@ -58,8 +57,7 @@ a.nuxt-link-exact-active {
 }
 
 .dropdownNav {
-	@apply flex flex-col h-full left-0 top-0 fixed;
-	@apply bg-blue-300 text-center;
+	@apply flex flex-col h-full left-0 top-0 fixed bg-blue-300 text-center !important;
 }
 .dropdownNav a {
 	@apply w-full;
