@@ -2,25 +2,25 @@
 	<div class="flex justify-center bg-gray-300 min-h-screen w-full space-y-8">
 		<form
 			class="
-				w-full
-				max-w-xs
-				bg-gray-300
+				container
+				bg-white
+				mx-auto
 				my-auto
 				flex flex-col
 				py-5
-				px-8
+				px-8 
 				rounded-lg
 				shadow-lg 
 			"
 			@submit.prevent=""
 		>
 			<div class="input-field">
-				<label for="email">Email</label>
 				<input id="email" type="text" placeholder="Email" />
+				<label for="email">Email</label>
 			</div>
 			<div class="input-field">
-				<label for="password">Password</label>
 				<input id="password" type="password" placeholder="Password" />
+				<label for="password">Password</label>
 			</div>
 			<div class="block items-center my-4">
 				<input type="checkbox" id="remember" />
@@ -31,26 +31,21 @@
 				<nuxt-link to=""> Reset </nuxt-link>
 			</div>
 			<div class="input-field">
-				<Button>Sign In</Button>
+				<button>Sign In</button>
 				<nuxt-link to="/signup">Create Account</nuxt-link>
 			</div>
 		</form>
 	</div>
 </template>
 <style scoped>
-.input-field {
-	@apply block py-2;
+.input-field{
+	@apply relative my-4 border-b-2 focus-within:border-blue-500;
 }
-.input-field a {
-	@apply text-blue-600 hover:text-blue-800;
+/* .input-field input{
+	@apply peer   focus-within:border-blue-500;
 }
-.input-field input {
-	@apply text-gray-700 shadow border rounded border-gray-300 p-3 mb-3;
-}
-.input-field label {
-	@apply text-gray-700 font-bold py-2;
-}
-.input-field button {
-	@apply bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4;
-}
+.input-field label{
+	@apply absolute top-0;
+} */
+
 </style>
